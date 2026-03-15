@@ -84,7 +84,7 @@ To meet reliability targets, the infrastructure was redesigned into a **fault-to
 
 #### Architecture Diagram
 
-<img src="./AWS%20Diagrams/2.%20Final%20Diagram.png" alt="Final Architecture" width="600">
+<img src="./AWS%20Diagrams/2.%20Final%20Diagram.png" alt="Final Architecture" width="700">
 
 This design provides:
 
