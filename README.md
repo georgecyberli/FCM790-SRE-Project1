@@ -36,9 +36,9 @@ Key engineering areas explored:
 * Failure Root Cause Analysis
 
 
-# 🏗️ Architecture Evolution
+## 🏗️ Architecture Evolution
 
-## Phase 1 — Proof of Concept (Single EC2 instance)
+### Phase 1 — Proof of Concept (Single EC2 instance)
 
 The initial architecture was a single-AZ deployment designed to validate the application logic.
 
@@ -57,31 +57,32 @@ This architecture successfully validated application functionality but introduce
 * No horizontal scalability
 * No database isolation
 
-### Architecture Diagram
+#### Architecture Diagram
 
 <img src="./AWS%20Diagrams/1.%20Initial%20Phase%20Diagram.png" alt="Initial Architecture" width="600">
 
+---
 
-## Phase 2 — High-Availability Production Architecture
+### Phase 2 — High-Availability Production Architecture
 
 To meet reliability targets, the infrastructure was redesigned into a **fault-tolerant Multi-AZ architecture**.
 
-### Compute Tier
+#### Compute Tier
 
 * EC2 instances deployed across **multiple Availability Zones**
 * Managed by an **Auto Scaling Group (ASG)**
 
-### Traffic Routing
+#### Traffic Routing
 
 * **Application Load Balancer (ALB)** distributes traffic
 * Health checks automatically remove unhealthy instances
 
-### Data Tier
+#### Data Tier
 
 * **Amazon RDS (MySQL)** deployed inside **private subnets**
 * Database credentials securely stored in **AWS Secrets Manager**
 
-### Architecture Diagram
+#### Architecture Diagram
 
 <img src="./AWS%20Diagrams/2.%20Final%20Diagram.png" alt="Final Architecture" width="600">
 
@@ -93,7 +94,7 @@ This design provides:
 * Fault tolerance across availability zones
 
 
-# 🎯 Service Level Objectives (SLOs)
+## 🎯 Service Level Objectives (SLOs)
 
 To define acceptable reliability levels, SLOs were calculated using a **rolling monthly window**.
 
@@ -116,7 +117,7 @@ For **99.9% availability**, the system is allowed:
 **43.8 minutes of downtime per month**
 
 
-# 💥 Chaos Engineering & Performance Testing
+## 💥 Chaos Engineering & Performance Testing
 
 To validate the Auto Scaling Group and infrastructure resilience, the system was subjected to sustained load tests of:
 
@@ -129,20 +130,20 @@ Metrics were collected using:
 * Application Load Balancer metrics
 
 
-## Test 1 — Cascading Failure (1 Instance Baseline)
+### Test 1 — Cascading Failure (1 Instance Baseline)
 
-### Scenario
+#### Scenario
 
 * 2,000 RPS directed to
 * **Single t3.micro EC2 instance**
 
-### Result
+#### Result
 
 The extreme load caused immediate **100% CPU utilization** on the EC2 instance.
 
 As the first instance failed ALB health checks and was terminated, a new auto scaling instance was still in a 'provisioning' or 'warming' state.
 
-### Impact
+#### Impact
 
 | Metric       | Result    |
 | ------------ | --------- |
@@ -152,10 +153,11 @@ As the first instance failed ALB health checks and was terminated, a new auto sc
 
 The system exhausted the **monthly error budget in under 5 minutes.**
 
+---
 
-## Test 2 — Mitigation & Validation (3 Insances Baseline)
+### Test 2 — Mitigation & Validation (3 Instances Baseline)
 
-### Remediation
+#### Remediation
 
 The Auto Scaling Group's desired baseline capacity was increased to:
 
@@ -163,11 +165,11 @@ The Auto Scaling Group's desired baseline capacity was increased to:
 
 This allowed the system to absorb the initial traffic spike without CPU bottlenecking.
 
-### Result
+#### Result
 
 The distributed compute load enabled efficient processing of requests while maintaining healthy database connections.
 
-### Impact
+#### Impact
 
 | Metric       | Result  |
 | ------------ | ------- |
@@ -178,7 +180,7 @@ The distributed compute load enabled efficient processing of requests while main
 The architecture remained stable and responsive under load.
 
 
-# 📊 SLO Compliance Summary
+## 📊 SLO Compliance Summary
 
 | Metric       | SLO Target | Test 1 (1 Instance) | Test 2 (3 Instances) | Status   |
 | ------------ | ---------- | ---------------- | ---------------- | -------- |
@@ -187,7 +189,7 @@ The architecture remained stable and responsive under load.
 | p95 Latency  | < 1,500 ms | 10,002 ms        | 10 ms            | ✅ PASSED |
 
 
-# 🔍 Observability
+## 🔍 Observability
 
 System monitoring was implemented using **AWS CloudWatch**.
 
@@ -206,7 +208,7 @@ Due to limitations in native AWS SQL monitoring, the following proxy metric was 
 This metric provided an effective indicator of backend failures.
 
 
-# ⚙️ Technology Stack
+## ⚙️ Technology Stack
 
 ### Cloud Infrastructure
 
@@ -231,9 +233,9 @@ This metric provided an effective indicator of backend failures.
 * AWS Cloud9 IDE - High-concurrency CLI load testing
 
 
-# 🧾 Architecture Decisions
+## 🧾 Architecture Decisions
 
-## Decision 1 — Use Application Load Balancer
+### Decision 1 — Use Application Load Balancer
 
 **Reason**
 
@@ -246,7 +248,7 @@ Application Load Balancer provides:
 This allows unhealthy instances to be automatically removed during failure scenarios.
 
 
-## Decision 2 — Deploy RDS in Private Subnets
+### Decision 2 — Deploy RDS in Private Subnets
 
 **Reason**
 
@@ -259,7 +261,7 @@ Placing RDS in private subnets:
 * Aligns with AWS security best practices
 
 
-## Decision 3 — Use AWS Secrets Manager for Credentials
+### Decision 3 — Use AWS Secrets Manager for Credentials
 
 **Reason**
 
@@ -272,7 +274,7 @@ Using Secrets Manager provides:
 * Future capability for credential rotation
 
 
-# 🧠 Core Engineering Takeaways
+## 🧠 Core Engineering Takeaways
 
 ### The Danger of the Thundering Herd
 
@@ -294,6 +296,6 @@ During heavy load, the architecture prioritized:
 
 This is a common reliability tradeoff in distributed systems.
 
-
+---
 
 <a href="https://github.com/georgecyberli" class="button icon back">Back to My Portfolio Page</a>
