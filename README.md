@@ -59,7 +59,7 @@ This architecture successfully validated application functionality but introduce
 
 ### Architecture Diagram
 
-![Initial Architecture](./Initial_Phase_Diagram.png)
+<img src="./AWS%20Diagrams/1.%20Initial%20Phase%20Diagram.png" alt="Initial Architecture" width="600">
 
 
 ## Phase 2 — High-Availability Production Architecture
@@ -83,7 +83,7 @@ To meet reliability targets, the infrastructure was redesigned into a **fault-to
 
 ### Architecture Diagram
 
-![Final Architecture](./Final_Diagram.png)
+<img src="./AWS%20Diagrams/2.%20Final%20Diagram.png" alt="Final Architecture" width="600">
 
 This design provides:
 
