@@ -1,5 +1,7 @@
 # High-Availability AWS Architecture & SRE Analysis 
 
+**Topics:** AWS, Cloud Architecture, Site Reliability Engineering, High Availability, DevOps, Observability
+
 ![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
 ![Architecture](https://img.shields.io/badge/Architecture-High%20Availability-blue)
 ![SRE](https://img.shields.io/badge/Focus-Site%20Reliability%20Engineering-green)
