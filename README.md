@@ -1,6 +1,4 @@
-# High-Availability AWS Architecture & SRE Analysis
-
-## AWS Project: Student-Records Web System
+# High-Availability AWS Architecture & SRE Analysis 
 
 ![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
 ![Architecture](https://img.shields.io/badge/Architecture-High%20Availability-blue)
