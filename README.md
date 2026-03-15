@@ -280,7 +280,7 @@ Using Secrets Manager provides:
 
 Insufficient baseline capacity during traffic spikes can trigger cascading failures faster than Auto Scaling can respond.
 
-Correct baseline sizing is critical.
+**Correct baseline sizing is critical**
 
 
 ### Proxy Metrics for Observability
