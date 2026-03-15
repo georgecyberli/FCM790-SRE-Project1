@@ -98,9 +98,7 @@ This design provides:
 
 To define acceptable reliability levels, SLOs were calculated using a **rolling monthly window**.
 
-Total minutes per month:
-
-43,800 minutes
+Total minutes per month: **43,800 minutes**
 
 ### Defined SLO Targets
 
