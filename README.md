@@ -100,7 +100,7 @@ All extensive project documentation, including step-by-step build instructions a
 
 * **[SLO Proposal Document](https://github.com/georgecyberli/FCM790-SRE-Project1/blob/main/SLO%20Proposal.pdf):** A comprehensive framework defining our Service Level Indicators (SLIs), target Service Level Objectives (SLOs), and strict error budget policies to establish baseline reliability metrics for the application.
 * **[Infrastructure & Troubleshooting Runbooks](https://www.notion.so/FCM-790-Site-Reliability-Engineering-316d6f439f01801591c3e4829192736d?source=copy_link):** Step-by-step technical documentation detailing the complete architecture build, including the manual provisioning of our Single-AZ Production database, alongside comprehensive troubleshooting workflows.
-* **[Load Testing & Capacity Analysis](https://www.notion.so/Load-Testing-SLO-Assessment-324d6f439f0180b8a7fbe82efda17f9b?source=copy_link):** Comprehensive documentation of our synthetic traffic simulations, highlighting the specific thresholds where the system reached capacity.
+* **[Load Testing Analysis](https://www.notion.so/Load-Testing-SLO-Assessment-324d6f439f0180b8a7fbe82efda17f9b?source=copy_link):** Comprehensive documentation of our synthetic traffic simulations, highlighting the specific thresholds where the system reached capacity.
 * **[SPOF (Single Point of Failure) Analysis](https://www.notion.so/SPOF-Documentation-324d6f439f0180a28775c85a1786e211?source=copy_link):** An architectural review identifying critical bottlenecks within the initial infrastructure and the highly available architecture.
 
 
