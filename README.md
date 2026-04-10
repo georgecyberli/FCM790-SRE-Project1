@@ -306,4 +306,6 @@ This is a common reliability tradeoff in distributed systems.
 
 ---
 
-<a href="https://github.com/georgecyberli" class="button icon back">Back to My Portfolio Page</a>
+[![⬅️ Back to My Portfolio](https://img.shields.io/badge/Back%20to-%20My%20Portfolio-blue)](https://github.com/georgecyberli)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[![Next ➡️](https://img.shields.io/badge/Next%20to-Part%202-blue)](https://github.com/georgecyberli/FCM790-SRE-Project2.git)
