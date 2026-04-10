@@ -8,6 +8,12 @@
 ![Database](https://img.shields.io/badge/Database-Amazon%20RDS-lightgrey)
 ![Observability](https://img.shields.io/badge/Monitoring-CloudWatch-yellow)
 
+---
+
+> **Note:** This is **Part 1** of a three-part cloud SRE engineering project.  
+> This phase establishes the **highly available AWS infrastructure**, forming the foundation for observability, monitoring, and incident response implemented in Part 2.
+
+---
 
 ## 📌 Executive Summary
 
